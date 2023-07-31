@@ -5,7 +5,7 @@ import os
 menu = [
     ["power", [
         "restart",
-        "recovery",
+        "flash",
         "bootloader"
     ]],
     ["debug", [
@@ -26,5 +26,10 @@ while run:
     event, values = window.read()
     if event == sg.WIN_CLOSED:
         run = False
+
+    if event == "restart":
+        os.system(".\\bin\\adb.exe reboot")
+    if event == "recovery" or event == "flash":
+        os.system(".\\bin\\adb.exe reboot recovery")
 
 window.close()
