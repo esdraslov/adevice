@@ -31,5 +31,11 @@ while run:
         os.system(".\\bin\\adb.exe reboot")
     if event == "recovery" or event == "flash":
         os.system(".\\bin\\adb.exe reboot recovery")
+    if event == "root device":
+        os.system(".\\bin\\adb.exe root")
+    if event == "unroot device":
+        os.system(".\\bin\\adb.exe unroot")
+    if event == "bootloader":
+        os.system(".\\bin\\adb.exe reboot bootloader")
 
 window.close()
