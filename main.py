@@ -10,6 +10,9 @@ menu = [
     ]],
     ["debug", [
         "logcat"
+    ]],
+    ["packages", [
+        "install package"
     ]]
 ]
 
@@ -37,5 +40,8 @@ while run:
         os.system(".\\bin\\adb.exe unroot")
     if event == "bootloader":
         os.system(".\\bin\\adb.exe reboot bootloader")
+    if event == "install package":
+        pack = sg.popup_get_file("please, select your apk file", file_types = (('android package', '*.apk *.apk')))
+        os.system(f".\\bin\\adb.exe install {pack}")
 
 window.close()
